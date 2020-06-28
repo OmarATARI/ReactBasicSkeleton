@@ -3,8 +3,7 @@
 MERN stack for development (Mongo, Express, ReactJs, Node). Nginx for production build.
 
 
-
-## Getting Started
+## Getting Started
 
 ```
 docker-compose up --build -d
