@@ -1,0 +1,25 @@
+version: '3.8'
+services:
+  ui:
+    build: ./ui
+    tty: true
+    ports:
+      - '3000:3000' #production: change to 80:80
+    volumes:
+      - ./ui/:/usr/src/app
+    stdin_open: true
+    depends_on:
+      - api
+  api:
+    build: ./api
+    ports:
+      - '8080:8080'
+    volumes:
+      - ./api/:/usr/src/app
+    depends_on:
+      - mongo
+  mongo:
+    image: mongo
+    ports:
+      - '27017:27017'
+
